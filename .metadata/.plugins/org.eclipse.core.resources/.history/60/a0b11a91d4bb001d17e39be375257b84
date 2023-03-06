@@ -1,0 +1,8 @@
+package ms.webflux.users.server.models.documents;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="")
+public class Users {
+
+}

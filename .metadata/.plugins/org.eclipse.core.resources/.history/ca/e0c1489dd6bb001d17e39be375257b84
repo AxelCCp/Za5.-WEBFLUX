@@ -1,0 +1,22 @@
+package ms.webflux.users.server.models.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import ms.webflux.users.server.models.dao.IUserDao;
+import ms.webflux.users.server.models.documents.User;
+
+public class UserService implements IUserService{
+
+	@Override
+	public List<User> usersList() {
+		// TODO Auto-generated method stub
+		return (List<User>) userDao.findAll();
+	}
+	
+	
+	@Autowired
+	private IUserDao userDao;
+
+}

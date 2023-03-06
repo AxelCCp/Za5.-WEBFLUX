@@ -1,0 +1,33 @@
+package ms.webflux.users.server.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import ms.webflux.users.server.models.documents.User;
+import ms.webflux.users.server.models.services.IUserService;
+import reactor.core.publisher.Flux;
+
+@Controller
+public class UserController {
+	
+	
+	@GetMapping({"/users-list"})
+	public String listOfUsers(Model model) {
+		
+		Flux<User> users = userService.usersList();
+		users.subscribe(u -> log.info(u.toString()));
+		
+		model.addAttribute("users", users);
+		model.addAttribute("title","List of users");
+		return "userList";
+	}
+
+		
+	@Autowired
+	private IUserService userService;
+	private static final Logger log = LoggerFactory.getLogger(UserController.class);
+			
+}

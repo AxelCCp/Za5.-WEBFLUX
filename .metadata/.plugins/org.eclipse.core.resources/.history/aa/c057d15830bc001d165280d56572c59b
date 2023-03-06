@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${title}"></title>
+</head>
+<body>
+	<h1 th:text="${title}"></h1>
+	<br>
+	<table>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>name</th>
+				<th>lastname</th>
+				<th>dateRegistry</th>
+				<th>address</th>
+				<th>email</th>
+				<th>phone</th>
+				<th>service</th>
+				<th>lastMonthRate</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user : ${users}">
+				<th scope="row" th:text="${user.id}"></th>
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.lastname}"></td>
+				<td th:text="${user.dateRegistry}"></td>
+				<td th:text="${user.address}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.phone}"></td>
+				<td th:text="${user.service}"></td>
+				<td th:text="${user.lastMonthRate}"></td>				
+			<tr>
+		</tbody>
+	
+	</table>
+
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col">id</th>
+	      <th scope="col">name</th>
+	      <th scope="col">lastname</th>
+	      <th scope="col">dateRegistry</th>
+	      <th scope="col">address</th>
+	      <th scope="col">email</th>
+	      <th scope="col">phone</th>
+	      <th scope="col">service</th>
+	      <th scope="col">lastMonthRate</th>
+	    </tr>
+	  </thead>
+	  <tbody class="table-group-divider">
+	    <tr th:each="user : ${users}">
+				<th scope="row" th:text="${user.id}"></th>
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.lastname}"></td>
+				<td th:text="${user.dateRegistry}"></td>
+				<td th:text="${user.address}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.phone}"></td>
+				<td th:text="${user.service}"></td>
+				<td th:text="${user.lastMonthRate}"></td>				
+			<tr>
+	   
+	  </tbody>
+	</table>
+</body>
+</html>

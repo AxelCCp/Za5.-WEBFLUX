@@ -1,0 +1,5 @@
+package ms.webflux.users.server.models.dao;
+
+public interface IUsersDao {
+
+}
